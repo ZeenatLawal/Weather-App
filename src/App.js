@@ -1,7 +1,7 @@
 import './styles/App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import WeatherCard from './components/WeatherCard';
+import WeatherContainer from './components/WeatherContainer';
 import { loadingScreen } from './redux/weatherData/weather';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <WeatherCard />
+      <WeatherContainer />
     </div>
   );
 };
