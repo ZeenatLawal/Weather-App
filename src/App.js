@@ -1,27 +1,21 @@
 import './styles/App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import WeatherCard from './components/WeatherCard';
+import { loadingScreen } from './redux/weatherData/weather';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadingScreen());
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <WeatherCard />
     </div>
   );
-}
+};
 
 export default App;
