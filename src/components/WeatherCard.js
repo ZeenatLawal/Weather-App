@@ -1,19 +1,37 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { useSelector } from 'react-redux';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-const WeatherCard = () => {
-  const loading = useSelector((state) => state.weatherReducer.loading);
+const WeatherCard = ({ weather }) => {
+  const card = (
+    <>
+      <CardContent>
+        <Typography>
+          Temperature
+        </Typography>
+        <Typography>
+          {weather.temp}
+          <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt="icon" />
+        </Typography>
+        <Typography>
+          {weather.date}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">See Chart</Button>
+      </CardActions>
+    </>
+  );
 
   return (
-    <>
-      { loading ? (
-        <img className="w-100" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="spinner" />
-      ) : (
-        <p>
-          Loading Data
-        </p>
-      )}
-    </>
+    <Box className="card">
+      <Card variant="outlined">{card}</Card>
+    </Box>
   );
 };
 

@@ -1,4 +1,19 @@
 * {
   margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.img-width {
+  width: 100%;
+  height: 99vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  padding-right: 0.3rem;
 }
