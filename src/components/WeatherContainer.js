@@ -40,6 +40,10 @@ const WeatherContainer = () => {
     dispatch(loadDaily(unit));
   };
 
+  const handleRefresh = () => {
+    dispatch(loadDaily(unit));
+  };
+
   return (
     <>
       { loading ? (
@@ -47,6 +51,7 @@ const WeatherContainer = () => {
       ) : (
         <>
           <Temperature unit={unit} onChange={onUnitChange} />
+          <Button onClick={handleRefresh}>Refresh</Button>
           <div className="flex">
             <Carousel breakPoints={breakPoints} renderArrow={myArrow} pagination={false}>
               {dailyWeather && dailyWeather.map((weather) => (
