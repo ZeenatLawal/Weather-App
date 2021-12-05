@@ -29,7 +29,7 @@ const WeatherCard = ({ weather }) => {
   );
 
   return (
-    <Box>
+    <Box className="card">
       <Card variant="outlined">{card}</Card>
     </Box>
   );

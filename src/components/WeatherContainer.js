@@ -27,9 +27,11 @@ const WeatherContainer = () => {
       ) : (
         <>
           <Temperature unit={unit} onChange={onUnitChange} />
-          {dailyWeather && dailyWeather.map((weather) => (
-            <WeatherCard key={weather.id} weather={weather} />
-          ))}
+          <div className="flex">
+            {dailyWeather && dailyWeather.map((weather) => (
+              <WeatherCard key={weather.id} weather={weather} />
+            ))}
+          </div>
         </>
       )}
     </>
