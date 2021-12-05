@@ -3,3 +3,8 @@
   padding: 0;
   text-align: center;
 }
+
+.img-width {
+  width: 100%;
+  height: 100vh;
+}
