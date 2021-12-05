@@ -23,7 +23,7 @@ const WeatherContainer = () => {
   return (
     <>
       { loading ? (
-        <img className="w-100" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="spinner" />
+        <img className="img-width" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="spinner" />
       ) : (
         <>
           <Temperature unit={unit} onChange={onUnitChange} />
