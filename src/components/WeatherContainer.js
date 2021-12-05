@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Carousel from 'react-elastic-carousel';
 import { loadDaily } from '../redux/weatherData/weather';
 import WeatherCard from './WeatherCard';
 import Temperature from './Temperature';
+
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 768, itemsToShow: 3 },
+];
 
 const WeatherContainer = () => {
   const loading = useSelector((state) => state.weatherReducer.loading);
@@ -28,9 +34,11 @@ const WeatherContainer = () => {
         <>
           <Temperature unit={unit} onChange={onUnitChange} />
           <div className="flex">
-            {dailyWeather && dailyWeather.map((weather) => (
-              <WeatherCard key={weather.id} weather={weather} />
-            ))}
+            <Carousel breakPoints={breakPoints}>
+              {dailyWeather && dailyWeather.map((weather) => (
+                <WeatherCard key={weather.id} weather={weather} />
+              ))}
+            </Carousel>
           </div>
         </>
       )}
