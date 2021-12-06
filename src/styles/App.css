@@ -17,3 +17,20 @@
 .card {
   padding-right: 0.3rem;
 }
+
+.card-size {
+  width: 10rem;
+  background-color: rgb(253, 192, 77) !important;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* @media screen and (min-width: 768px) {
+  .card-size {
+    width: 20rem;
+  }
+}  */
