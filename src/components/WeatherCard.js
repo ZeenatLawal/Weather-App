@@ -2,19 +2,22 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { blueGrey } from '@mui/material/colors';
 
 const WeatherCard = ({ weather }) => {
   const card = (
     <>
-      <CardContent>
+      <CardContent sx={{
+        padding: 1,
+        color: blueGrey[700],
+      }}
+      >
         <Typography>
           Temperature
         </Typography>
-        <Typography>
+        <Typography className="weather">
           {weather.temp}
           <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt="icon" />
         </Typography>
@@ -22,15 +25,12 @@ const WeatherCard = ({ weather }) => {
           {weather.date}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">See Chart</Button>
-      </CardActions>
     </>
   );
 
   return (
     <Box className="card">
-      <Card variant="outlined">{card}</Card>
+      <Card variant="outlined" className="card-size">{card}</Card>
     </Box>
   );
 };

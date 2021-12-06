@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Carousel, { consts } from 'react-elastic-carousel';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import Button from '@mui/material/Button';
 import { loadDaily } from '../redux/weatherData/weather';
 import WeatherCard from './WeatherCard';
 import Temperature from './Temperature';
@@ -7,6 +11,20 @@ import Temperature from './Temperature';
 const WeatherContainer = () => {
   const loading = useSelector((state) => state.weatherReducer.loading);
   const dailyWeather = useSelector((state) => state.weatherReducer.daily);
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 558, itemsToShow: 3 },
+  ];
+
+  const myArrow = ({ type, onClick, isEdge }) => {
+    const pointer = type === consts.PREV ? <ArrowCircleLeftIcon fontSize="large" /> : <ArrowCircleRightIcon fontSize="large" />;
+    return (
+      <Button onClick={onClick} disabled={isEdge}>
+        {pointer}
+      </Button>
+    );
+  };
 
   const dispatch = useDispatch();
   const [unit, setUnit] = useState('metric');
@@ -20,6 +38,10 @@ const WeatherContainer = () => {
     dispatch(loadDaily(unit));
   };
 
+  const handleRefresh = () => {
+    dispatch(loadDaily(unit));
+  };
+
   return (
     <>
       { loading ? (
@@ -27,10 +49,13 @@ const WeatherContainer = () => {
       ) : (
         <>
           <Temperature unit={unit} onChange={onUnitChange} />
+          <Button onClick={handleRefresh}>Refresh</Button>
           <div className="flex">
-            {dailyWeather && dailyWeather.map((weather) => (
-              <WeatherCard key={weather.id} weather={weather} />
-            ))}
+            <Carousel breakPoints={breakPoints} renderArrow={myArrow} pagination={false}>
+              {dailyWeather && dailyWeather.map((weather) => (
+                <WeatherCard key={weather.id} weather={weather} />
+              ))}
+            </Carousel>
           </div>
         </>
       )}
