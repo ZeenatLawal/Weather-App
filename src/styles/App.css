@@ -4,9 +4,19 @@
   text-align: center;
 }
 
+body {
+  background-image: url('../assets/sunset-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
 .App {
   width: 95%;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
 }
 
 .img-width {
@@ -56,5 +66,10 @@
 
   .refresh {
     margin-left: 8rem !important;
+  }
+
+  body {
+    background-image: url('../assets/sunset.jpg');
+    background-size: cover;
   }
 }
