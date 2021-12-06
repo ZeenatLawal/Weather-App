@@ -14,8 +14,7 @@ const WeatherContainer = () => {
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
-    { width: 558, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
+    { width: 558, itemsToShow: 3 },
   ];
 
   const myArrow = ({ type, onClick, isEdge }) => {
