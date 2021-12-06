@@ -24,6 +24,7 @@ export const loadDaily = (metric) => async (dispatch) => {
       id: getResult.list[i].dt,
       date: new Date(getResult.list[i].dt * 1000).toLocaleDateString('en-US', options),
       temp: getResult.list[i].main.temp,
+      desc: getResult.list[i].weather[0].description,
       icon: getResult.list[i].weather[0].icon,
     };
 

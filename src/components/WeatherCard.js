@@ -22,6 +22,9 @@ const WeatherCard = ({ weather }) => {
           <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt="icon" />
         </Typography>
         <Typography>
+          {weather.desc}
+        </Typography>
+        <Typography>
           {weather.date}
         </Typography>
       </CardContent>
