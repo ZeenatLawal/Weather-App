@@ -48,9 +48,11 @@ const WeatherContainer = () => {
         <img className="img-width" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="spinner" />
       ) : (
         <>
-          <Temperature unit={unit} onChange={onUnitChange} />
-          <Button onClick={handleRefresh}>Refresh</Button>
-          <div className="flex">
+          <div className="nav">
+            <Temperature unit={unit} onChange={onUnitChange} />
+            <Button onClick={handleRefresh} variant="contained" className="refresh">Refresh</Button>
+          </div>
+          <div className="flex cards">
             <Carousel breakPoints={breakPoints} renderArrow={myArrow} pagination={false}>
               {dailyWeather && dailyWeather.map((weather) => (
                 <WeatherCard key={weather.id} weather={weather} />

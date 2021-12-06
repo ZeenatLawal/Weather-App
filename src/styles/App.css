@@ -6,16 +6,19 @@
 
 .App {
   width: 95%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .img-width {
   width: 100%;
-  height: 99vh;
+  height: 90vh;
 }
 
 .flex {
   display: flex;
+}
+
+.cards {
   justify-content: center;
 }
 
@@ -33,13 +36,25 @@
 }
 
 .weather {
-  display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.nav {
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
   .App {
     width: 70%;
+  }
+
+  .temp {
+    padding-right: 0.4rem;
+    margin-left: 6rem !important;
+  }
+
+  .refresh {
+    margin-left: 8rem !important;
   }
 }
