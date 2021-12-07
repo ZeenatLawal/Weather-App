@@ -34,7 +34,7 @@ const WeatherContainer = () => {
 
   useEffect(() => {
     dispatch(loadDaily(unit));
-  }, [dispatch]);
+  }, [dispatch, unit]);
 
   const onUnitChange = (unit) => {
     setUnit(unit);
