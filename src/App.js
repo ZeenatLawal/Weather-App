@@ -5,7 +5,12 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import WeatherContainer from './components/WeatherContainer';
 import { loadingScreen } from './redux/weatherData/weather';
 
+const font = "'Lato', sans-serif";
+
 const theme = createTheme({
+  typography: {
+    fontFamily: font,
+  },
   palette: {
     primary: {
       main: '#ffca28',
