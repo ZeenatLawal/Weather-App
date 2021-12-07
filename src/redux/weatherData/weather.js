@@ -17,8 +17,8 @@ const dailyWeather = (payload) => ({
   payload,
 });
 
-export const loadDaily = (metric) => async (dispatch) => {
-  const getResult = await getWeather(metric);
+export const loadDaily = (unit) => async (dispatch) => {
+  const getResult = await getWeather(unit);
   const groupedData = [];
   for (let i = 0; i < getResult.list.length; i += 8) {
     const temporary = {
@@ -37,8 +37,8 @@ export const loadDaily = (metric) => async (dispatch) => {
   }
 };
 
-export const loadWeather = (date) => async (dispatch) => {
-  const getResult = await getWeather('metric');
+export const loadWeather = (date, unit) => async (dispatch) => {
+  const getResult = await getWeather(unit);
   const timeOptions = { hour: 'numeric', minute: 'numeric' };
   const weather = getResult.list.map((list) => ({
     id: list.dt,

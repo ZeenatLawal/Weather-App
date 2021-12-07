@@ -44,7 +44,7 @@ const WeatherContainer = () => {
   };
 
   const handleChart = (date) => {
-    dispatch(loadWeather(date));
+    dispatch(loadWeather(date, unit));
   };
 
   const weather = useSelector((state) => state.weatherReducer.weather);
@@ -62,13 +62,11 @@ const WeatherContainer = () => {
           <div className="flex cards">
             <Carousel breakPoints={breakPoints} renderArrow={myArrow} pagination={false}>
               {dailyWeather && dailyWeather.map((weather) => (
-                <>
-                  <WeatherCard
-                    key={weather.id}
-                    weather={weather}
-                    onClick={() => handleChart(weather.date)}
-                  />
-                </>
+                <WeatherCard
+                  key={weather.id}
+                  weather={weather}
+                  onClick={() => handleChart(weather.date)}
+                />
               ))}
             </Carousel>
           </div>
