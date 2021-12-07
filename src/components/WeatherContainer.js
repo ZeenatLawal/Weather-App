@@ -4,9 +4,11 @@ import Carousel, { consts } from 'react-elastic-carousel';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import Button from '@mui/material/Button';
-import { loadDaily } from '../redux/weatherData/weather';
+import ReactLoading from 'react-loading';
+import { loadDaily, loadWeather } from '../redux/weatherData/weather';
 import WeatherCard from './WeatherCard';
 import Temperature from './Temperature';
+import Barchart from './Barchart';
 
 const WeatherContainer = () => {
   const loading = useSelector((state) => state.weatherReducer.loading);
@@ -42,21 +44,36 @@ const WeatherContainer = () => {
     dispatch(loadDaily(unit));
   };
 
+  const handleChart = (date) => {
+    dispatch(loadWeather(date, unit));
+  };
+
+  const weather = useSelector((state) => state.weatherReducer.weather);
+
   return (
     <>
       { loading ? (
-        <img className="img-width" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="spinner" />
+        <ReactLoading className="spinner" type="spinningBubbles" color="#ffffff" height={67} width={275} />
       ) : (
         <>
-          <Temperature unit={unit} onChange={onUnitChange} />
-          <Button onClick={handleRefresh}>Refresh</Button>
-          <div className="flex">
+          <div className="nav">
+            <Temperature unit={unit} onChange={onUnitChange} />
+            <Button onClick={handleRefresh} variant="contained" className="refresh">Refresh</Button>
+          </div>
+          <div className="flex cards">
             <Carousel breakPoints={breakPoints} renderArrow={myArrow} pagination={false}>
               {dailyWeather && dailyWeather.map((weather) => (
-                <WeatherCard key={weather.id} weather={weather} />
+                <WeatherCard
+                  key={weather.id}
+                  weather={weather}
+                  onClick={() => handleChart(weather.date)}
+                />
               ))}
             </Carousel>
           </div>
+          {weather && (
+            <Barchart weather={weather} />
+          )}
         </>
       )}
     </>
