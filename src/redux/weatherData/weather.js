@@ -2,6 +2,7 @@ import getWeather from './ApiCalls';
 
 const LOADING = 'weather-app/weatherData/LOADING';
 const GET_DAILY = 'weather-app/weatherData/GET_DAILY';
+const GET_WEATHER = 'weather-app/weatherData/GET_WEATHER';
 
 const initialState = [];
 
@@ -36,6 +37,26 @@ export const loadDaily = (metric) => async (dispatch) => {
   }
 };
 
+export const loadWeather = (date) => async (dispatch) => {
+  const getResult = await getWeather('metric');
+  const timeOptions = { hour: 'numeric', minute: 'numeric' };
+  const weather = getResult.list.map((list) => ({
+    id: list.dt,
+    date: new Date(list.dt * 1000).toLocaleDateString('en-US', options),
+    time: new Date(list.dt * 1000).toLocaleTimeString('en-US', timeOptions),
+    temp: list.main.temp,
+  }));
+
+  const hourly = weather.filter((data) => data.date === date);
+
+  if (hourly) {
+    dispatch({
+      type: GET_WEATHER,
+      payload: hourly,
+    });
+  }
+};
+
 const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOADING:
@@ -47,6 +68,12 @@ const weatherReducer = (state = initialState, action) => {
       return {
         ...state,
         daily: action.payload,
+        loading: false,
+      };
+    case GET_WEATHER:
+      return {
+        ...state,
+        weather: action.payload,
         loading: false,
       };
     default:
