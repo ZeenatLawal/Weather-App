@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,11 @@
 }
 
 body {
-  background-image: url('../assets/sunset-mobile.jpg');
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0, 0),
+    #33333350
+  ), url('../assets/sunset-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -16,7 +22,8 @@ body {
 
 .App {
   width: 95%;
-  margin: 20px auto 0 auto;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .spinner {
@@ -69,7 +76,11 @@ body {
   }
 
   body {
-    background-image: url('../assets/sunset.jpg');
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0, 0),
+      #33333350
+    ), url('../assets/sunset.jpg');
     background-size: cover;
   }
 
