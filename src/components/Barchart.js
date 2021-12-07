@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import '../styles/Barchart.css';
 import React from 'react';
 import {
   Chart as ChartJS,
@@ -49,7 +50,10 @@ const Barchart = ({ weather }) => {
       {
         label: 'Temperature',
         data: temps,
-        backgroundColor: '#fb8500',
+        backgroundColor: '#ffca28',
+        borderColor: '#8ecae6',
+        borderWidth: 1,
+        hoverBackgroundColor: '#ffe082',
       },
     ],
   };

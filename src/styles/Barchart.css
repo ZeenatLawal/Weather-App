@@ -1,0 +1,13 @@
+.bar {
+  background-color: #ffecb3;
+  padding: 10px;
+  opacity: 0.9;
+}
+
+@media screen and (min-width: 768px) {
+  .bar {
+    height: 5% !important;
+    width: 70% !important;
+    margin: 0 auto;
+  }
+}

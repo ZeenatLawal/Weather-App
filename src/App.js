@@ -26,6 +26,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        <h2>Weather forecast for Abuja</h2>
         <WeatherContainer />
       </div>
     </ThemeProvider>

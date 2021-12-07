@@ -25,7 +25,12 @@ body {
 .App {
   width: 95%;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 10px;
+}
+
+.App h2 {
+  font-family: 'Lato', sans-serif;
+  color: #fffde7;
 }
 
 .flex {
@@ -35,6 +40,7 @@ body {
 @media screen and (min-width: 768px) {
   .App {
     width: 70%;
+    padding-top: 7px;
   }
 
   body {
@@ -46,11 +52,5 @@ body {
       ),
       url('../assets/sunset.jpg');
     background-size: cover;
-  }
-
-  .bar {
-    height: 5% !important;
-    width: 70% !important;
-    margin: 0 auto;
   }
 }
