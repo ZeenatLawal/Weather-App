@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import '../styles/WeatherCard.css';
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';

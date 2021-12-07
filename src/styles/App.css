@@ -26,57 +26,13 @@ body {
   padding-top: 20px;
 }
 
-.spinner {
-  margin: 6rem auto;
-}
-
 .flex {
   display: flex;
-}
-
-.cards {
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.temp {
-  padding-right: 4.4rem;
-}
-
-.card {
-  padding-right: 0.3rem;
-}
-
-.card-size {
-  width: 10rem;
-  background: linear-gradient(
-    45deg,
-    #b39ddb,
-    #fff9c4
-  ) !important;
-}
-
-.weather {
-  align-items: center;
-  justify-content: space-around;
-}
-
-.nav {
-  margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
   .App {
     width: 70%;
-  }
-
-  .temp {
-    padding-right: 0.4rem;
-    margin-left: 6rem !important;
-  }
-
-  .refresh {
-    margin-left: 8rem !important;
   }
 
   body {
@@ -92,13 +48,5 @@ body {
     height: 5% !important;
     width: 70% !important;
     margin: 0 auto;
-  }
-
-  .card-size {
-    background: linear-gradient(
-      45deg,
-      #ffca28,
-      #8ecae6
-    ) !important;
   }
 }
