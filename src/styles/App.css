@@ -49,7 +49,11 @@ body {
 
 .card-size {
   width: 10rem;
-  background-color: rgb(253, 192, 77) !important;
+  background: linear-gradient(
+    45deg,
+    #b39ddb,
+    #fff9c4
+  ) !important;
 }
 
 .weather {
@@ -88,5 +92,13 @@ body {
     height: 5% !important;
     width: 70% !important;
     margin: 0 auto;
+  }
+
+  .card-size {
+    background: linear-gradient(
+      45deg,
+      #ffca28,
+      #8ecae6
+    ) !important;
   }
 }
