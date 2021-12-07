@@ -30,6 +30,7 @@ body {
 
 .cards {
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .temp {
@@ -71,5 +72,11 @@ body {
   body {
     background-image: url('../assets/sunset.jpg');
     background-size: cover;
+  }
+
+  .bar {
+    height: 5% !important;
+    width: 70% !important;
+    margin: 0 auto;
   }
 }

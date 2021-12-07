@@ -55,7 +55,7 @@ const Barchart = ({ weather }) => {
   };
 
   return (
-    <Bar options={options} data={data} />
+    <Bar options={options} data={data} className="bar" />
   );
 };
 
