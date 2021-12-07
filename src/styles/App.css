@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,13 @@
 }
 
 body {
-  background-image: url('../assets/sunset-mobile.jpg');
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      #33333350
+    ),
+    url('../assets/sunset-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -16,66 +24,33 @@ body {
 
 .App {
   width: 95%;
-  margin: 20px auto 0 auto;
+  margin: 0 auto;
+  padding-top: 10px;
 }
 
-.spinner {
-  margin: 6rem auto;
+.App h2 {
+  font-family: 'Lato', sans-serif;
+  color: #fffde7;
 }
 
 .flex {
   display: flex;
 }
 
-.cards {
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.temp {
-  padding-right: 4.4rem;
-}
-
-.card {
-  padding-right: 0.3rem;
-}
-
-.card-size {
-  width: 10rem;
-  background-color: rgb(253, 192, 77) !important;
-}
-
-.weather {
-  align-items: center;
-  justify-content: space-around;
-}
-
-.nav {
-  margin-bottom: 1.5rem;
-}
-
 @media screen and (min-width: 768px) {
   .App {
     width: 70%;
-  }
-
-  .temp {
-    padding-right: 0.4rem;
-    margin-left: 6rem !important;
-  }
-
-  .refresh {
-    margin-left: 8rem !important;
+    padding-top: 7px;
   }
 
   body {
-    background-image: url('../assets/sunset.jpg');
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        #33333350
+      ),
+      url('../assets/sunset.jpg');
     background-size: cover;
-  }
-
-  .bar {
-    height: 5% !important;
-    width: 70% !important;
-    margin: 0 auto;
   }
 }

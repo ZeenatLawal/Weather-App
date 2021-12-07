@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import '../styles/WeatherCard.css';
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -14,17 +15,17 @@ const WeatherCard = ({ weather, onClick }) => {
         color: blue[900],
       }}
       >
-        <Typography>
+        <Typography sx={{ fontWeight: 'bold' }} color="secondary">
           Temperature
         </Typography>
-        <Typography className="flex weather">
+        <Typography className="flex weather" sx={{ fontWeight: 'bold' }} color="secondary">
           {weather.temp}
           <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt="icon" />
         </Typography>
-        <Typography>
+        <Typography color="secondary">
           {weather.desc}
         </Typography>
-        <Typography>
+        <Typography color="secondary">
           {weather.date}
         </Typography>
       </CardContent>

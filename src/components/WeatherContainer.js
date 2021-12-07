@@ -1,3 +1,4 @@
+import '../styles/WeatherContainer.css';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel, { consts } from 'react-elastic-carousel';
@@ -53,12 +54,12 @@ const WeatherContainer = () => {
   return (
     <>
       { loading ? (
-        <ReactLoading className="spinner" type="spinningBubbles" color="#ffffff" height={67} width={275} />
+        <ReactLoading className="spinner" type="spinningBubbles" color="#ffa726" height={67} width={275} />
       ) : (
         <>
           <div className="nav">
             <Temperature unit={unit} onChange={onUnitChange} />
-            <Button onClick={handleRefresh} variant="contained" className="refresh">Refresh</Button>
+            <Button onClick={handleRefresh} variant="contained" color="primary" className="refresh">Refresh</Button>
           </div>
           <div className="flex cards">
             <Carousel breakPoints={breakPoints} renderArrow={myArrow} pagination={false}>
