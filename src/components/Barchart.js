@@ -31,11 +31,17 @@ const Barchart = ({ weather }) => {
     });
   }
 
+  const { date } = weather[0];
+
   const options = {
     responsive: true,
     plugins: {
       legend: {
         position: 'top',
+      },
+      title: {
+        display: true,
+        text: `${date} Temperatures`,
       },
     },
   };

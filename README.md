@@ -1,6 +1,10 @@
 # Weather-App
 > A simple web application that collects information from an API to provide weather forecast. Real live data is obtained from the OpenWeatherMap API.
 
+## Live demo
+
+[Weather App](https://weather-app-zee.netlify.app/)
+
 ### Weather App
 #### Desktop
 ![screenshot](./src/assets/desktop.png)
@@ -14,10 +18,6 @@
 - Redux
 - Material UI
 
-## Live demo
-
-[Weather App](https://weather-app-zee.netlify.app/)
-
 ## Getting Started
 
 ### To get a local copy run the following steps:
@@ -26,7 +26,6 @@
 - Open your terminal or command line
 - Run `git clone` and paste the link above
 - Open the folder with your code editor
-- Create a branch to work on
 - Run `npm install` to install all dependencies
 - Run `npm start` and go to `http:localhost:3000/` to launch the server.
 
