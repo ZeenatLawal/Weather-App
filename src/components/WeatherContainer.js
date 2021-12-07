@@ -4,6 +4,7 @@ import Carousel, { consts } from 'react-elastic-carousel';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import Button from '@mui/material/Button';
+import ReactLoading from 'react-loading';
 import { loadDaily, loadWeather } from '../redux/weatherData/weather';
 import WeatherCard from './WeatherCard';
 import Temperature from './Temperature';
@@ -52,7 +53,7 @@ const WeatherContainer = () => {
   return (
     <>
       { loading ? (
-        <img className="img-width" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="spinner" />
+        <ReactLoading className="spinner" type="spinningBubbles" color="#ffffff" height={67} width={275} />
       ) : (
         <>
           <div className="nav">
@@ -70,7 +71,9 @@ const WeatherContainer = () => {
               ))}
             </Carousel>
           </div>
-          <Barchart weather={weather} />
+          {weather && (
+            <Barchart weather={weather} />
+          )}
         </>
       )}
     </>

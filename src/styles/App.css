@@ -19,9 +19,8 @@ body {
   margin: 20px auto 0 auto;
 }
 
-.img-width {
-  width: 100%;
-  height: 90vh;
+.spinner {
+  margin: 6rem auto;
 }
 
 .flex {
