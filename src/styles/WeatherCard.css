@@ -4,11 +4,12 @@
 
 .card-size {
   width: 10rem;
-  background: linear-gradient(
-    45deg,
-    #b39ddb,
-    #fff9c4
-  ) !important;
+  background:
+    linear-gradient(
+      45deg,
+      #b39ddb,
+      #fff9c4
+    ) !important;
 }
 
 .weather {
@@ -18,10 +19,11 @@
 
 @media screen and (min-width: 768px) {
   .card-size {
-    background: linear-gradient(
-      45deg,
-      #ffca28,
-      #8ecae6
-    ) !important;
+    background:
+      linear-gradient(
+        45deg,
+        #ffca28,
+        #8ecae6
+      ) !important;
   }
 }
