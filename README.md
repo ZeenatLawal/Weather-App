@@ -2,7 +2,11 @@
 > A simple web application that collects information from an API to provide weather forecast. Real live data is obtained from the OpenWeatherMap API.
 
 ### Weather App
-![screenshot](./src/assets/)
+#### Desktop
+![screenshot](./src/assets/desktop.png)
+
+#### Mobile
+![screenshot](./src/assets/mobile.png)
 
 ## Built With
 

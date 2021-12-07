@@ -37,10 +37,6 @@ const Barchart = ({ weather }) => {
       legend: {
         position: 'top',
       },
-      title: {
-        display: true,
-        text: 'Today\'s Temperatures',
-      },
     },
   };
 
