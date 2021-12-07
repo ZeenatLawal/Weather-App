@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 
-const WeatherCard = ({ weather }) => {
+const WeatherCard = ({ weather, onClick }) => {
   const card = (
     <>
       <CardContent sx={{
@@ -32,7 +32,7 @@ const WeatherCard = ({ weather }) => {
   );
 
   return (
-    <Box className="card">
+    <Box className="card" onClick={onClick}>
       <Card variant="outlined" className="card-size">{card}</Card>
     </Box>
   );
