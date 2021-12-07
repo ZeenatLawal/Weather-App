@@ -16,7 +16,7 @@
 
 ## Live demo
 
-[Weather App]()
+[Weather App](https://weather-app-zee.netlify.app/)
 
 ## Getting Started
 
