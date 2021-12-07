@@ -20,7 +20,7 @@ const WeatherCard = ({ weather, onClick }) => {
         </Typography>
         <Typography className="flex weather" sx={{ fontWeight: 'bold' }} color="secondary">
           {weather.temp}
-          <img src={`http://openweathermap.org/img/wn/${weather.icon}.png`} alt="icon" />
+          <img src={`https://openweathermap.org/img/wn/${weather.icon}.png`} alt="icon" />
         </Typography>
         <Typography color="secondary">
           {weather.desc}
