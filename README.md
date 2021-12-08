@@ -1,9 +1,13 @@
 # Weather-App
 > A simple web application that collects information from an API to provide weather forecast. Real live data is obtained from the OpenWeatherMap API.
 
-## Live demo
+## Live Preview
 
 [Weather App](https://weather-app-zee.netlify.app/)
+
+## Video Deno
+
+[Weather App](https://www.loom.com/share/dcc0e00a954a416aac70de2929a2f77d)
 
 ### Weather App
 #### Desktop
