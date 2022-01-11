@@ -5,7 +5,7 @@
 
 [Weather App](https://weather-app-zee.netlify.app/)
 
-## Video Deno
+## Video Demo
 
 [Weather App](https://www.loom.com/share/dcc0e00a954a416aac70de2929a2f77d)
 
